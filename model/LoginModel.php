@@ -1,7 +1,7 @@
 <?php
 
 
-class login_model extends Model
+class LoginModel extends Model
 {
     public function __construct()
     {
@@ -20,8 +20,8 @@ class login_model extends Model
 
         //if($result->num_rows === 0) echo 'No rows';
         $data = $result->fetch_assoc();
-        return $data;
         $stmt->close();
         $this->db->close();
+        return $data;
     }
 }

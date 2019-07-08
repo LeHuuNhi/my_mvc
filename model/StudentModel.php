@@ -1,7 +1,6 @@
 <?php
 
-
-class student_model extends Model
+class StudentModel extends Model
 {
     public function __construct()
     {
@@ -23,9 +22,9 @@ class student_model extends Model
 
             $data[] = $row;
         }
-        return $data;
         $stmt->close();
         $this->db->close();
+        return $data;
     }
 
     public function creatStudent($name,$birthdate)
@@ -50,9 +49,9 @@ class student_model extends Model
 
         //if($result->num_rows === 0) echo 'No rows';
         $data = $result->fetch_assoc();
-        return $data;
         $stmt->close();
         $this->db->close();
+        return $data;
     }
 
     public function updateStudent($id,$name,$birthdate)

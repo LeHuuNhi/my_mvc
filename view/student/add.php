@@ -1,4 +1,3 @@
-<?php require "view/header.php";?>
 
     <form class="form-inline" method="post" action="postAdd">
         <div class="form-group mx-sm-3 mb-2">
@@ -12,4 +11,3 @@
         <button type="submit" class="btn btn-primary mb-2">Insert Student</button>
     </form>
 
-<?php require "view/footer.php";?>

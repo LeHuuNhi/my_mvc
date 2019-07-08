@@ -1,4 +1,4 @@
-<?php require "view/header.php";?>
+
     <table class="table table-striped">
         <thead>
         <tr>
@@ -42,9 +42,5 @@
                 endforeach;
             endif;
             ?>
-
-
-
         </tbody>
     </table>
-<?php require "view/footer.php";?>

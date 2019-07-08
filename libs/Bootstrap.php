@@ -4,29 +4,18 @@ class Bootstrap
 {
     public function __construct()
     {
-        spl_autoload_register(function ($class) {
-
-            $filename = 'controller/' . $class . '.php';
-            if (file_exists($filename)) {
-                include $filename;
-            }
-        });
-
         $url = $_GET['url'];
         $url = rtrim($url, "/");
         $url = explode('/', $url);
-        // print_r($url);die();
 
         //check login session
         if($url[0] !="login")
         {
-            session_start();
-            if (!isset($_SESSION['login_ss']) ||(trim ($_SESSION['login_ss'])) == '') {
+            if (!isset($_SESSION['login_ss'])) {
                 header('location: http://localhost/nhi_mvc/login/loginForm');
                 exit();
-            }else
-            {
-                $ctrlName = $url[0] . "_controller";
+            } else {
+                $ctrlName = ucfirst($url[0]) ."Controller";
                 $controller = new $ctrlName();
 
                 if(isset($url[1]))
@@ -37,10 +26,9 @@ class Bootstrap
                         $controller->{$url[1]}();
                 }
             }
-        }
-        else
-        {
-            $ctrlName = $url[0] . "_controller";
+        } else {
+
+            $ctrlName = ucfirst($url[0]) ."Controller";
             $controller = new $ctrlName();
 
             if(isset($url[1]))
@@ -51,7 +39,5 @@ class Bootstrap
                     $controller->{$url[1]}();
             }
         }
-
-
     }
 }

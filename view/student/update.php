@@ -1,4 +1,3 @@
-<?php require "view/header.php";?>
 
     <form class="form-inline" method="post" action="postUpdate"
           onsubmit="return confirm('Do you really want to update the form?');">
@@ -14,4 +13,3 @@
         <button type="submit" class="btn btn-primary mb-2">Update Student</button>
     </form>
 
-<?php require "view/footer.php";?>

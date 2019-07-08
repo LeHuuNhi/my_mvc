@@ -7,10 +7,12 @@ class View
     {
        // echo "</br>"."this is view";
     }
+
     public function render($name)
     {
-
-       require 'view/'.$name.'.php';
+        require BP . "/view/header.php";
+        require BP . "/view/{$name}.php";
+        require BP . "/view/footer.php";
     }
 
 }

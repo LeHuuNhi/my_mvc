@@ -4,6 +4,7 @@
 class Controller
 {
     protected $view;
+
     public function __construct()
     {
         //echo "this is main controller";

@@ -1,4 +1,3 @@
-<?php require "view/header.php";?>
 <?php
 if (count($this->row) > 0) :
     $student = $this->row;
@@ -8,4 +7,3 @@ if (count($this->row) > 0) :
 
 endif;
 ?>
-<?php require "view/footer.php";?>

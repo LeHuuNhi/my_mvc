@@ -1,19 +1,14 @@
 <?php
-spl_autoload_register(function ($class) {
 
-    $filename = 'model/' . $class . '.php';
-    if (file_exists($filename)) {
-        include $filename;
-    }
-});
-
-class index_controller extends Controller
+class IndexController extends Controller
 {
+
+    protected $model;
 
     public function __construct()
     {
         parent::__construct();
-        $this->model = new student_model();
+        $this->model = new StudentModel();
     }
 
     //go to list of students page
@@ -41,7 +36,6 @@ class index_controller extends Controller
             //echo $name.$birthDate;
 
             $this->model->creatStudent($name, $birthDate);
-            //echo "hihi";
 
         endif;
         header('location:students');
